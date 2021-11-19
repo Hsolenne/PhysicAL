@@ -1,0 +1,143 @@
+<template>
+  <div>
+    <nav>
+      <div id="menu-contener">
+        <ul>
+
+          <router-link id="logo" to="/">LOGO</router-link>
+
+
+          <router-link to="/">Accueil</router-link>
+
+          <router-link to="/abonnement">Abonnement</router-link>
+          <router-link to="/mescours"  v-show="false"  >Mes Cours</router-link>
+
+          <router-link to="/nutrition">Nutrition</router-link>
+
+          <router-link to="/moncompte" v-show="false">Mon compte</router-link>
+          <router-link to="/sinscrire">S'inscrire</router-link>
+
+          <a @click="$refs.login.visible=true" >Se connecter</a>
+
+        </ul>
+      </div>
+      <router-view/>
+    </nav>
+
+    <Login :visible="visible" ref="login" />
+
+  </div>
+</template>
+
+<script>
+
+import Login from "./Login";
+
+export default {
+  name: 'Menu',
+  components: {Login},
+
+  data: function (){
+    return {
+      visible: false,
+    }
+  }
+
+}
+
+
+</script>
+
+<style scoped lang="less">
+
+#menu-contener {
+
+  z-index: 10;
+
+  font-family: 'Urbanist', sans-serif;
+  font-weight: lighter;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 50px;
+
+  background: white;
+  box-shadow: 0 0 10px #00000060 ;
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+
+  & ul {
+    max-width: 1320px;
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+  }
+
+
+  & a {
+    display: block;
+
+    padding: 0 30px;
+    margin: auto 0;
+
+    border-right: 1px solid var(--gray);
+
+
+    text-decoration: none;
+    color: var(--gray);
+
+
+    &:first-child {
+      //background-image: url("src/assets/content/LOGO_2.svg");
+    }
+
+
+    &:nth-last-child(-n + 3), &:first-child {
+      border: none;
+
+    }
+
+
+    &:nth-last-child(2) {
+      border: none;
+      color: var(--blue);
+
+    }
+
+    &:last-child {
+      margin: auto 15px;
+      background: var(--blue);
+      padding: 5px 15px;
+      border-radius: 15px;
+      border: 1px solid var(--blue);
+
+      color: white;
+    }
+
+    &:last-child:hover {
+      background: none;
+      color: var(--blue);
+
+    }
+
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+
+  & #logo {
+    margin-right: auto;
+
+  }
+
+}
+</style>
