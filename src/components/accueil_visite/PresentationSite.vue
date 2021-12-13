@@ -1,7 +1,6 @@
 <template>
   <div id="presentation_du_site">
     <section>
-      <h2><span class="logo">Physic'AL,</span> c'est <span class="title_underline">quoi ?</span></h2>
       <p>Des cours de sports à la maison pour tous à des prix minis avec :</p>
       <ul>
         <li>
@@ -35,27 +34,30 @@ export default {
 
 
 #presentation_du_site {
-  max-width: 1320px;
-  width: 100%;
-
-  margin: 60px 0;
-
+  align-self: center;
+  padding: 0 40px;
+  margin-bottom: 60px;
 
   font-family: 'Urbanist', sans-serif;
   font-weight: lighter;
   font-size: 20px;
 
+  & section > p {
+    margin-bottom: 25px;
+  }
+
+  & ul {
+    width: calc(100% - 2*50px);
+    padding: 0 50px;
+  }
+
+  & li {
+    list-style-type: circle;
+    margin-bottom: 20px;
+  }
+  & li::marker {
+    color: var(--blue);
+  }
 }
-
-
-h2 {
-  font-size: 40px;
-  margin-bottom: 40px;
-  display: inline-block;
-
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: normal;
-}
-
 
 </style>

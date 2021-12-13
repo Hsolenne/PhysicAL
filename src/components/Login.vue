@@ -25,8 +25,6 @@
           </div>
         </form>
 
-        <router-view/>
-
       </div>
     </div>
 

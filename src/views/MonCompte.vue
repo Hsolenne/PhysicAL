@@ -2,12 +2,23 @@
   <div>
 
 
+
+
+
+
+    <FooterPage/>
+
   </div>
 </template>
 
 <script>
+
+import FooterPage from "../components/FooterPage";
+
+
 export default {
-  name: "MonCompte"
+  name: "MonCompte",
+  components: {FooterPage},
 }
 </script>
 

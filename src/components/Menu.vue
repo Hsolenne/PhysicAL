@@ -2,6 +2,8 @@
   <div>
     <nav>
       <div id="menu-contener">
+
+
         <ul>
 
           <router-link id="logo" to="/">LOGO</router-link>
@@ -10,21 +12,30 @@
           <router-link to="/">Accueil</router-link>
 
           <router-link to="/abonnement">Abonnement</router-link>
-          <router-link to="/mescours"  v-show="false"  >Mes Cours</router-link>
+          <router-link to="/mescours" v-show="false">Mes Cours</router-link>
 
           <router-link to="/nutrition">Nutrition</router-link>
 
           <router-link to="/moncompte" v-show="false">Mon compte</router-link>
           <router-link to="/sinscrire">S'inscrire</router-link>
 
-          <a @click="$refs.login.visible=true" >Se connecter</a>
+          <a @click="$refs.login.visible=true">Se connecter</a>
+
 
         </ul>
+
+        <div id="menu-button">
+          <div class="menu_button_bar"></div>
+          <div class="menu_button_bar"></div>
+          <div class="menu_button_bar"></div>
+        </div>
+
+
       </div>
       <router-view/>
     </nav>
 
-    <Login :visible="visible" ref="login" />
+    <Login :visible="visible" ref="login"/>
 
   </div>
 </template>
@@ -37,7 +48,7 @@ export default {
   name: 'Menu',
   components: {Login},
 
-  data: function (){
+  data: function () {
     return {
       visible: false,
     }
@@ -63,12 +74,37 @@ export default {
   width: 100vw;
   height: 50px;
 
+
+  @media (max-width: 1320px) {
+    height: 100vh;
+  }
+
   background: white;
-  box-shadow: 0 0 10px #00000060 ;
+  box-shadow: 0 0 10px #00000060;
 
   display: flex;
   justify-content: center;
   align-content: center;
+
+
+  & div#menu-button {
+    display: none;
+    width: 30px;
+    height: 25px;
+
+    & div.menu_button_bar {
+      background-color: var(--blue);
+      width: 100%;
+      height: 5px;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 1320px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
 
 
   & ul {
@@ -78,6 +114,13 @@ export default {
     display: flex;
     justify-content: flex-end;
     align-content: center;
+
+
+    @media (max-width: 1320px) {
+      display: block;
+
+    }
+
   }
 
 
@@ -90,12 +133,36 @@ export default {
     border-right: 1px solid var(--gray);
 
 
+    @media (max-width: 1320px) {
+      border: none;
+      margin-bottom: 30px;
+
+    }
+
     text-decoration: none;
     color: var(--gray);
 
 
     &:first-child {
-      //background-image: url("src/assets/content/LOGO_2.svg");
+      background-image: url("../assets/content/LOGO_2.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 35px;
+      width: 102.15px ;
+
+      text-indent: -9999px;
+
+      @media (max-width: 1320px) {
+        background-image: url("../assets/content/LOGO_1.svg");
+        height: 35px;
+        width: 35px;
+        margin: 15px 0 100px 0;
+
+
+      }
+
+
     }
 
 
@@ -109,9 +176,15 @@ export default {
       border: none;
       color: var(--blue);
 
+      @media (max-width: 1320px){
+        margin-top: 150px;
+      }
+
     }
 
     &:last-child {
+      display: block;
+
       margin: auto 15px;
       background: var(--blue);
       padding: 5px 15px;
@@ -119,6 +192,8 @@ export default {
       border: 1px solid var(--blue);
 
       color: white;
+
+
     }
 
     &:last-child:hover {
@@ -131,6 +206,18 @@ export default {
     &:hover {
       text-decoration: underline;
     }
+
+
+
+
+    @media (max-width: 1320px) {
+      &:nth-child(1+n) {
+        display: none;
+
+      }
+    }
+
+
   }
 
 

@@ -1,6 +1,8 @@
 <template>
   <div>
     <body>
+
+
     <div id="img-background">
     </div>
 
@@ -10,16 +12,53 @@
       <a href="" class="accueil-button">Découvrir</a>
     </header>
 
+
     <main>
 
+      <h2><span class="logo">Physic'AL</span>, c'est <span class="title_underline">quoi ?</span></h2>
       <PresentationSite/>
 
-      <!--      <PresentationActivites/>-->
+
+      <h2>Les <span class="title_underline">activités</span></h2>
+
+      <section id="activité_liste">
+
+        <PresentationActivite
+            nom="HIIT"
+            contenuCourt="Lorem lorem lorem pour la 1"
+            contenuLong="Cours alliant cardio et
+        renforcement musculaire en
+        fractionné afin de brûler
+        un maximum de calories
+        en un temps très court activité 1"
+            intensite=""
+
+            v-bind:class="{ intensite3: true }"
+        />
+
+        <PresentationActivite
+            nom="Zenfit"
+            contenuCourt="Lorem lorem lorem pour la 2"
+            contenuLong="Cours alliant cardio et
+        renforcement musculaire en
+        fractionné afin de brûler
+        un maximum de calories
+        en un temps très court activité 2"
+            intensite=""
+
+            v-bind:class="{ intensite1: true }"
+        />
+
+      </section>
+
+
+      <h2>Qui <span class="title_underline">suis-je ?</span></h2>
+
 
       <PresentationCoach/>
 
 
-      <!--      <PresentationAbonnements/>-->
+      <PresentationAbonnements/>
 
 
       <FooterPage/>
@@ -34,11 +73,14 @@
 <script>
 import PresentationSite from "../components/accueil_visite/PresentationSite";
 import PresentationCoach from "../components/accueil_visite/PresentationCoach";
-import FooterPage from "./FooterPage";
+import FooterPage from "../components/FooterPage";
+import PresentationActivite from "../components/accueil_visite/PresentationActivite";
+import PresentationAbonnements from "../components/accueil_visite/PresentationAbonnements.vue";
+
 
 export default {
   name: "Accueil",
-  components: {FooterPage, PresentationCoach, PresentationSite}
+  components: {PresentationActivite, FooterPage, PresentationCoach, PresentationSite, PresentationAbonnements,}
 }
 </script>
 
@@ -58,6 +100,7 @@ export default {
 }
 
 header {
+  padding: 0 40px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -106,6 +149,34 @@ header {
 
 
   }
+
+}
+
+
+main {
+
+  display: flex;
+  flex-direction: column;
+
+
+  & h2 {
+    font-size: 40px;
+    margin: 60px auto;
+    display: inline-block;
+
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: normal;
+    text-align: center;
+
+
+  }
+
+
+  & #activité_liste {
+    display: flex;
+    justify-content: center;
+  }
+
 }
 
 

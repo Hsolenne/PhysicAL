@@ -1,12 +1,24 @@
 <template>
   <div>
 
+
+
+
+
+
+    <FooterPage/>
+
   </div>
 </template>
 
 <script>
+
+import FooterPage from "../components/FooterPage";
+
+
 export default {
-  name: "MesCours"
+  name: "MesCours",
+  components: {FooterPage},
 }
 </script>
 

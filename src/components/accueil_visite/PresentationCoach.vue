@@ -1,9 +1,22 @@
 <template>
-  <div id="presentation_du_site">
-    <section>
+  <div>
+    <section id="presentation_coach">
 
 
+      <p>Je suis <span>Anne-Laure</span>, passionnée de danse depuis l'âge de 3 ans, je donne des cours de fitness
+        depuis mes 20 ans,
+        d'abord de façon bénévole puis de façon plus officielle depuis 2014 où j'ai passé le CQP en Animation de Loisirs
+        Sportifs, ce qui m'a permis de faire de ma passion mon métier.
 
+        Après avoir fait mes débuts en tant que prof de Zumba®, j'ai ensuite élargi mon activité en proposant des cours
+        de Renforcement musculaire, de danse (enfant/adulte), de Piloxing®. Après avoir suivi plusieurs formations,
+        notamment une formation Yoga en Inde à Rishikesh, j'ai aussi développé un cours mélangeant des techniques de
+        <span>Stretching, Pilates et Yoga : le ZenFit</span>.
+      </p>
+
+      <div>
+        <img src="../../assets/media/img_presentation_coach.png" alt="Photographie Anne-Laure Grandjean">
+      </div>
 
     </section>
   </div>
@@ -15,29 +28,29 @@ export default {
 </script>
 <style lang="less" scoped>
 
+#presentation_coach {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-#presentation_du_site {
-  max-width: 1320px;
-  width: 100%;
 
-  margin: 60px 0;
-
-
+p {
   font-family: 'Urbanist', sans-serif;
   font-weight: lighter;
-  font-size: 20px;
+  display: block;
+  text-decoration: none;
+  font-size: 22px;
+  width: 60%;
 
+  & span {
+    font-weight: bold;
+  }
 }
 
-
-h2 {
-  font-size: 40px;
-  margin-bottom: 40px;
-  display: inline-block;
-
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: normal;
+img {
+  width: 350px;
+  height: 364.5px;
 }
-
 
 </style>
