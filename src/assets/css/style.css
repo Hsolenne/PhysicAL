@@ -9,6 +9,7 @@
     --light_gray: #EEEEEE;
 
     --blue: #7934CB;
+    --purple: #C89AFF;
 
 
 }
@@ -47,8 +48,10 @@ body {
 
 .title_underline {
     display: inline-block;
+    text-decoration: underline var(--purple) 10px;
 }
 
-.title_underline:before {
+.title_underline::before {
+
 }
 

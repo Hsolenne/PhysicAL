@@ -2,9 +2,7 @@
   <div>
     <div id="section_activite">
 
-
-      <svg></svg>
-
+      <img :src="lienimg" alt="">
 
       <h4>{{ nom }}</h4>
 
@@ -16,17 +14,23 @@
           <div></div>
           <div></div>
           <div></div>
-          <div></div>
         </div>
       </div>
 
-      <button class="blue-button" @click="$refs.selection_activite.visible=true">
-        Voir plus
+      <button class="blue-button"
+              @click="$refs.selection_activite.visible=true"
+      >
+        Voir +
       </button>
 
     </div>
 
-    <SelectionPresentationActivite :visible="visible" :contenuLong="contenuLong" :nom="nom" ref="selection_activite"  />
+    <SelectionPresentationActivite
+        :visible="visible"
+        :contenuLong="contenuLong"
+        :nom="nom"
+        ref="selection_activite"
+    />
 
   </div>
 </template>
@@ -40,7 +44,7 @@ export default {
   components: {SelectionPresentationActivite},
 
 
-  props: ['nom','contenuCourt','contenuLong','intensite'],
+  props: ['nom','contenuCourt','contenuLong','intensite','lienimg'],
 
   data: function (){
     return {
@@ -57,6 +61,10 @@ export default {
 
 #section_activite {
 
+  margin: 0 20px 100px 20px;
+  padding-bottom: 30px;
+
+
   font-family: 'Urbanist', sans-serif;
   font-weight: lighter;
   font-size: 20px;
@@ -65,7 +73,7 @@ export default {
 
   background: white;
   box-shadow: 0 0 5px #00000060;
-  max-width: 424px;
+  width: 424px;
 
 
   display: flex;
@@ -78,6 +86,12 @@ export default {
 
   }
 
+}
+
+img {
+  height: 210px;
+  width: auto;
+  margin: 10px 0;
 }
 
 p {
@@ -99,6 +113,10 @@ h5 {
   font-size: 20px;
   text-decoration: underline;
 
+}
+
+button {
+  width: 100px;
 }
 
 

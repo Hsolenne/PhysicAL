@@ -36,6 +36,7 @@ export default {
   text-align: center;
   font-family: 'Urbanist', sans-serif;
 
+  margin-bottom: 80px;
 
   & > p {
 

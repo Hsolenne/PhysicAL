@@ -24,6 +24,7 @@
       <section id="activité_liste">
 
         <PresentationActivite
+            lienimg="src/assets/media/activites_img/img_activite_hiit.png"
             nom="HIIT"
             contenuCourt="Lorem lorem lorem pour la 1"
             contenuLong="Cours alliant cardio et
@@ -37,6 +38,7 @@
         />
 
         <PresentationActivite
+            lienimg="../../assets/media/activites_img/img_activite_zenfit.png"
             nom="Zenfit"
             contenuCourt="Lorem lorem lorem pour la 2"
             contenuLong="Cours alliant cardio et
@@ -53,6 +55,8 @@
 
 
       <h2>Qui <span class="title_underline">suis-je ?</span></h2>
+
+
 
 
       <PresentationCoach/>
@@ -86,6 +90,15 @@ export default {
 
 <style lang="less" scoped>
 
+/*
+
+body {
+  background-image: url("../assets/content/fils_fond_div.png");
+
+}
+*/
+
+
 #img-background {
   height: 100vh;
   width: 100vw;
@@ -93,8 +106,13 @@ export default {
   left: 0;
   top: 0;
 
-  //background-image: url("");
   background-color: #70707020;
+
+  background-image: url("../assets/media/Coach_fitness-fond_flou.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: darken;
 
   z-index: -10;
 }
@@ -105,6 +123,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 80px;
 
   & > * {
     margin-bottom: 50px;
@@ -154,6 +173,8 @@ header {
 
 
 main {
+
+
 
   display: flex;
   flex-direction: column;

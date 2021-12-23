@@ -37,12 +37,16 @@ div.element_abonnement {
   justify-content: space-around;
   box-shadow: 0 0 5px #00000050;
 margin: 0 10px;
+  font-family: 'Urbanist', sans-serif;
+
 
 
   & h3 {
 
     font-size: 24px;
     font-weight: normal;
+    font-family: 'Urbanist', sans-serif;
+    text-align: center;
   }
 
   & p {
