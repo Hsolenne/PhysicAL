@@ -5,13 +5,13 @@
       <div id="liste_abonnements">
 
         <Element_abonnement
-            nom="Abonnement 1 sport au choix"
-            prix="8 € / mois"
-            lien=""/>
+            nom_abo="Abonnement 1 sport au choix"
+            prix_abo="8 € / mois"
+            lien_abo=""/>
         <Element_abonnement
-            nom="Abonnement tous les sports"
-            prix="15 € / mois"
-            lien=""/>
+            nom_abo="Abonnement tous les sports"
+            prix_abo="14 € / mois"
+            lien_abo=""/>
 
       </div>
 

@@ -1,67 +1,43 @@
 <template>
   <div>
-
-    <div id="img-background">
-    </div>
-
-    <header>
-      <h1>Nutrition</h1>
-      <h2>Bougez simplement</h2>
-    </header>
-
-    <main>
-      <h2>Tous nos conseils <span class="title_underline">nutrition</span></h2>
-      <section id="liste_articles" class="white_bg">
+    <section v-for="article in ArticleNutrition" :key="article.id" >
+      <article id="article">
+        <h2>{{article.acf.titre}}</h2>
+        <img :src="article.acf.image">
 
 
-        <ElementNutrition/>
+        <p>{{article.acf.description}}</p>
 
-      </section>
-
-
-    </main>
-
-
-    <footer>
-      <FooterPage/>
-    </footer>
-
+      </article>
+    </section>
   </div>
 </template>
 
+
 <script>
-
-import FooterPage from "../components/FooterPage";
-import ElementNutrition from "../components/nutrition/ElementNutrition.vue";
-
+import param from '@/param/param';
+import axios from "axios";
 
 export default {
-  name: "Nutrition",
-  components: {ElementNutrition, FooterPage},
+  name: 'ElementNutrition',
+  data() {
+    return {
+      ArticleNutrition: []
+    }
+  },
+  created() {
+    axios.get(param.host + "/article_nutrition")
+        .then(response => {
+          console.log("ReponseSolenne", response);
+          this.ArticleNutrition = response.data;
+          console.log("ReponseSolenne2", this.ArticleNutrition);
+        })
+        .catch(error => console.log(error))
+  }
 }
 </script>
-
-
 <style scoped lang="less">
 
-
-#img-background {
-  height: 40vh;
-  width: 100vw;
-  position: absolute;
-  left: 0;
-  top: 0;
-
-  background-color: #70707020;
-
-  background-image: url("../assets/media/Coach_fitness-fond_flou.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-blend-mode: darken;
-
-  z-index: -10;
-}
 
 header {
   padding: 0 40px;
@@ -95,8 +71,6 @@ header {
 
 
 main {
-
-
   display: flex;
   flex-direction: column;
 
@@ -142,16 +116,6 @@ main {
 }
 
 
-.white_bg {
-  margin: 25px;
-  padding: 25px;
-
-  width: calc(100% - 100px);
-  width: -webkit-fill-available;
-
-  background: white;
-}
-
 article {
 
   margin-bottom: 50px;
@@ -163,7 +127,8 @@ article {
 
   & p {
     font-size: 20px;
-    margin: 20px 0 0 0 ;
+    margin: 20px 0 0 0;
+    font-family: 'Urbanist', sans-serif;
   }
 
   & img {
@@ -173,7 +138,6 @@ article {
     width: 150px;
     margin: 20px 20px 20px 0;
   }
-
 }
 
 

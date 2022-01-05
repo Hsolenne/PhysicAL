@@ -11,11 +11,13 @@
 
     <main>
       <h2>Rejoignez <span class="title_underline">nous !</span></h2>
+
+      <Detail_abonnement/>
+
     <PresentationAbonnements/>
 
 
-    <Detail_abonnement/>
-      <Detail_abonnement/>
+
 
 
     </main>

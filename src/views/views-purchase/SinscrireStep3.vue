@@ -1,12 +1,13 @@
 <template>
-  <div id="inscrition">
+  <div id="inscrition_step3">
 
     <main>
 
 
       <div id="white_bg">
-        <h2><span class="title_underline">Inscription</span></h2>
+        <h2><span class="title_underline">Facturation</span></h2>
 
+        <p>Merci pour votre inscription, veuillez vérifier le type d'abonnement choisi :</p>
 
         <form action="" method="get">
           <div id="form_part_1">
@@ -55,16 +56,32 @@
           <p id="champsobligatoire">Champs obligatoires.</p>
 
           <section id="submit_button">
-          <button class="blue-button">Déjà client ? Connectez-vous</button>
+            <button class="blue-button">Déjà client ? Connectez-vous</button>
 
 
-          <div>
-<!--            <input type="submit" id="register_user" class="blue-button" value="Valider l'inscription">-->
-                        <router-link to="/sinscrire2"> INSCIPTION  </router-link>
+            <div>
+              <!--            <input type="submit" id="register_user" class="blue-button" value="Valider l'inscription">-->
+              <router-link to="/sinscrire2"> INSCIPTION  </router-link>
 
-          </div>
+            </div>
           </section>
         </form>
+
+
+        <div id="valider_commande">
+
+          <h4 id="title_valider_commande">Votre commande</h4>
+
+          <h4 id="produit_title">Produit</h4>
+          <h4 id="prix_title">Prix</h4>
+          <h4 id="quantite_title">Quantité</h4>
+          <h4 class="soustotal_title">Sous-total</h4>
+          <p class="soustotal">8.00€</p>
+          <h4 id="total_title">Total</h4>
+          <p id="total">8.00€</p>
+
+
+        </div>
 
 
       </div>
@@ -79,18 +96,20 @@
 </template>
 
 <script>
-import FooterPage from "../components/FooterPage";
+import FooterPage from "../../components/FooterPage";
 
 
 export default {
-  name: "SInscrire",
+  name: "SInscrireStep3x",
   components: {FooterPage},
 
 }
 </script>
 
 <style scoped lang="less">
-#inscrition {
+#inscrition_step2 {
+  font-family: Urbanist;
+  font-weight: lighter;
   font-size: 20px;
 }
 
@@ -140,7 +159,7 @@ form {
 
   & div > div {
     min-width: calc(50% - 55px);
-    height: 42px ;
+    height: 42px;
     margin-right: 55px;
     margin-bottom: 20px;
     position: relative;
@@ -152,7 +171,7 @@ form {
       font-size: 40px;
       font-weight: bold;
       position: absolute;
-      top: calc( 50% - (40px * 0.35));
+      top: calc(50% - (40px * 0.35));
       right: -20px;
 
     }
@@ -171,8 +190,6 @@ form {
 }
 
 
-
-
 p#champsobligatoire {
   position: relative;
   display: block;
@@ -189,7 +206,7 @@ p#champsobligatoire {
     font-size: 40px;
     font-weight: bold;
     position: absolute;
-    top: calc( 50% - (20px * 0.8) );
+    top: calc(50% - (20px * 0.8));
     left: -20px;
 
   }

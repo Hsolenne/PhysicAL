@@ -23,33 +23,7 @@
 
       <section id="activité_liste">
 
-        <PresentationActivite
-            lienimg="src/assets/media/activites_img/img_activite_hiit.png"
-            nom="HIIT"
-            contenuCourt="Lorem lorem lorem pour la 1"
-            contenuLong="Cours alliant cardio et
-        renforcement musculaire en
-        fractionné afin de brûler
-        un maximum de calories
-        en un temps très court activité 1"
-            intensite=""
-
-            v-bind:class="{ intensite3: true }"
-        />
-
-        <PresentationActivite
-            lienimg="../../assets/media/activites_img/img_activite_zenfit.png"
-            nom="Zenfit"
-            contenuCourt="Lorem lorem lorem pour la 2"
-            contenuLong="Cours alliant cardio et
-        renforcement musculaire en
-        fractionné afin de brûler
-        un maximum de calories
-        en un temps très court activité 2"
-            intensite=""
-
-            v-bind:class="{ intensite1: true }"
-        />
+        <PresentationActivite/>
 
       </section>
 

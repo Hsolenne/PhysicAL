@@ -3,9 +3,11 @@
     <div id="login_window_background"  v-show="visible">
       <div  id="login_window">
 
-        <button id="close_login" @click="visible = false">X</button>
+        <button id="close_login" class="close" type="button" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
 
-        <h3>Se connecter</h3>
+        <h3>Connexion</h3>
         <p>Connectez-vous pour accéder au contenu premium ou choisissez
 
           <router-link to="/abonnement">un abonnement</router-link>
@@ -15,13 +17,16 @@
         <form action="" method="get">
 
           <div>
-            <input type="text" placeholder="Identifiant ou Adresse E-mail" name="identifiant" id="id_login" required>
+            <input type="text" placeholder="Adresse E-mail" name="identifiant" id="id_login" required
+            v-model="utilisateur.adresse_mail">
           </div>
           <div>
-            <input type="password" placeholder="Mot de passe" name="password" id="pswd_login" required>
+            <input type="password" placeholder="Mot de passe" name="password" id="pswd_login" required
+            v-model="utilisateur.mot_de_passe">
           </div>
           <div>
-            <input type="submit" id="login_submit" class="blue-button" value="Se connecter">
+            <button type="button" id="login_submit" class="blue-button"
+                    @click='connect'>Connexion</button>
           </div>
         </form>
 
@@ -32,13 +37,48 @@
 </template>
 
 <script>
+import axios from "axios";
+import param from "../param/param.js";
+
 export default {
   name: 'Login',
 
   props: {
     visible:{},
-  }
+    connect:{},
+  },
+  data() {
+    return {
+      utilisateur: {
+        adresse_mail: null,
+        mot_de_passe: null,
+      },
+      titre:null,
+      created() {
+        this.titre=param.titre
+      },
+      methods: {
+        connect: function () {
+          let params = new FormData();
+          params.append('adresse_mail', this.utilisateur.adresse_mail);
+          params.append('mot_de_passe', this.utilisateur.mot_de_passe);
 
+          axios({
+            method:'post',
+            url:param.auth + 'token',
+            data:params
+          })
+              .then(function(response) {
+                console.log("Reponse token", response);
+                this.utilisateur = response.data;
+                console.log("utilisateur", response.data);
+                this.titre = "Deconnexion";
+              }.bind(this))
+
+        }
+      }
+    }
+  }
 }
 </script>
 

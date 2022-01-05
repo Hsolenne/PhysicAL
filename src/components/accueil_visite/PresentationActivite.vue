@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div id="section_activite">
+    <div v-for="activites in Activite" :key="activites.id" id="section_activite">
 
-      <img :src="lienimg" alt="">
+      <img :src=activites.acf.image alt="">
 
-      <h4>{{ nom }}</h4>
+      <h4>{{activites.acf.nom_activite}}</h4>
 
-      <p>{{ contenuCourt }}</p>
+      <p>{{activites.acf.description}}</p>
 
       <div>
         <h5>Intensité</h5>
@@ -27,8 +27,6 @@
 
     <SelectionPresentationActivite
         :visible="visible"
-        :contenuLong="contenuLong"
-        :nom="nom"
         ref="selection_activite"
     />
 
@@ -37,21 +35,30 @@
 <script>
 
 import SelectionPresentationActivite from "./SelectionPresentationActivite";
+import param from '@/param/param';
+import axios from "axios";
 
 export default {
   name: 'PresentationActivite',
-
   components: {SelectionPresentationActivite},
 
-
-  props: ['nom','contenuCourt','contenuLong','intensite','lienimg'],
-
-  data: function (){
+  data: function () {
     return {
       visible: false,
-    }
-  }
+      Activite: []
 
+    }
+  },
+    created() {
+      axios.get(param.host+"/activites")
+          .then(response=>{
+            console.log("ReponseSolenne",response);
+            this.Activite = response.data;
+            console.log("ReponseSolenne2",this.Activite);
+
+          })
+          .catch(error => console.log(error))
+    }
 }
 
 
@@ -61,7 +68,7 @@ export default {
 
 #section_activite {
 
-  margin: 0 20px 100px 20px;
+  margin: 0 20px 50px 20px;
   padding-bottom: 30px;
 
 
@@ -75,7 +82,7 @@ export default {
   box-shadow: 0 0 5px #00000060;
   width: 424px;
 
-
+  float: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -95,7 +102,7 @@ img {
 }
 
 p {
-  width: 50%;
+  width: 60%;
   text-align: center;
   padding-bottom: 60px;
 

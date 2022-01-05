@@ -41,10 +41,23 @@ body {
 
 }
 
+.blue-button a {
+    text-decoration: none;
+    color: white;
+    width: min-content;
+    font-size: 16px;
+}
+
 .blue-button:hover {
     background: none;
     color: var(--blue);
 }
+
+.blue-button:hover a{
+    background: none;
+    color: var(--blue);
+}
+
 
 .title_underline {
     display: inline-block;
@@ -54,4 +67,3 @@ body {
 .title_underline::before {
 
 }
-

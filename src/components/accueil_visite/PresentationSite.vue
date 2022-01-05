@@ -4,19 +4,22 @@
       <p>Des cours de sports à la maison pour tous à des prix minis avec :</p>
       <ul>
         <li>
-          <p>Des vidéos en direct</p>
+          <p>Des vidéos toutes les semaines</p>
         </li>
         <li>
-          <p>Des replays</p>
+          <p>Des vidéos allant de 15 à 30 minutes</p>
         </li>
         <li>
-          <p>Une diversité de sports proposés à différentes intensités</p>
+          <p>Deux types de sports proposés à différentes intensités</p>
         </li>
         <li>
           <p>Une rubrique nutrition</p>
         </li>
         <li>
           <p>Accesssible sur tous les supports</p>
+        </li>
+        <li>
+          <p>Possibilité de suivre les cours via Facebook</p>
         </li>
       </ul>
 

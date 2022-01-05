@@ -30,10 +30,10 @@
         <h4>À Propos</h4>
         <ul>
           <li>
-            <a href="">Mentions Légales</a>
+            <router-link to="/mentionslegales">Mentions Légales</router-link>
           </li>
           <li>
-            <a href="">Politique de confidentialité</a>
+            <router-link to="politiqueconfidentialite">Politique de confidentialité</router-link>
           </li>
         </ul>
         </div>
@@ -43,10 +43,10 @@
 
           <ul>
             <li>
-              <p>Téléphone :<a href="">07 67 54 89 08</a></p>
+              <p>Téléphone : <a href="">07 67 54 89 08</a></p>
             </li>
             <li>
-              <p>Email :<a href="">al-grandjean@gmail.com</a></p>
+              <p>Email : <a href="">al-grandjean@gmail.com</a></p>
             </li>
           </ul>
         </div>

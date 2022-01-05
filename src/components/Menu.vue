@@ -11,15 +11,19 @@
 
           <router-link to="/">Accueil</router-link>
 
-          <router-link to="/abonnement">Abonnement</router-link>
-          <router-link to="/mescours" v-show="false">Mes Cours</router-link>
+          <router-link to="/abonnement" v-show="true">Abonnement</router-link>
+          <router-link to="/mescours" v-show="true">Mes Cours</router-link>
 
           <router-link to="/nutrition">Nutrition</router-link>
 
-          <router-link to="/moncompte" v-show="false">Mon compte</router-link>
-          <router-link to="/sinscrire">S'inscrire</router-link>
+          <router-link to="/moncompte" v-show="true">Mon compte</router-link>
+          <router-link to="/contact" v-show="true">Contact</router-link>
 
-          <a @click="$refs.login.visible=true">Se connecter</a>
+          <router-link to="/sinscrire" v-show="true">S'inscrire</router-link>
+
+          <a @click="$refs.register.visible=true">S'inscrire</a>
+
+          <a @click="$refs.login.visible=true">{{titre}}</a>
 
 
         </ul>
@@ -35,6 +39,9 @@
       <router-view/>
     </nav>
 
+
+    <Register :visible="visible" ref="register"/>
+
     <Login :visible="visible" ref="login"/>
 
   </div>
@@ -43,17 +50,22 @@
 <script>
 
 import Login from "./Login";
+import Register from "./Register";
+import param from "../param/param.js";
 
 export default {
   name: 'Menu',
-  components: {Login},
+  components: {Login,Register},
 
   data: function () {
     return {
       visible: false,
     }
-  }
+  },
+created() {
+    this.titre = param.titre;
 
+}
 }
 
 
