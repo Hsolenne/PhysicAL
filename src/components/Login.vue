@@ -16,7 +16,7 @@
 
           <div>
             <input type="text" placeholder="Adresse E-mail" name="identifiant" id="id_login" required
-            v-model="utilisateur.adresse_mail">
+            v-model="utilisateur.identifiant">
           </div>
           <div>
             <input type="password" placeholder="Mot de passe" name="password" id="pswd_login" required
@@ -43,23 +43,24 @@ export default {
 
   props: {
     visible:{},
-    connect:{},
   },
   data() {
     return {
       utilisateur: {
-        adresse_mail: null,
+        identifiant: null,
         mot_de_passe: null,
       },
-      titre:null,
+      titre: null,
+    }
+  },
       created() {
         this.titre=param.titre
       },
       methods: {
         connect: function () {
           let params = new FormData();
-          params.append('adresse_mail', this.utilisateur.adresse_mail);
-          params.append('mot_de_passe', this.utilisateur.mot_de_passe);
+          params.append('username', this.utilisateur.identifiant);
+          params.append('password', this.utilisateur.mot_de_passe);
 
           axios({
             method:'post',
@@ -67,16 +68,16 @@ export default {
             data:params
           })
               .then(function(response) {
+                alert("Vous êtes connectés");
                 console.log("Reponse token", response);
                 this.utilisateur = response.data;
                 console.log("utilisateur", response.data);
                 this.titre = "Deconnexion";
+
               }.bind(this))
 
         }
       }
-    }
-  }
 }
 </script>
 

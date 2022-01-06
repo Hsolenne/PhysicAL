@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-      <div>
+    <div>
         <nav>
           <div id="menu-contener" class="closed">
 
