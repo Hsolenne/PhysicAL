@@ -20,21 +20,24 @@
             </div>
           </div>
 
+          <div id="valider_abonnement">
 
-          <section id="submit_button">
-            <button class="blue-button">Déjà client ? Connectez-vous</button>
+            <h4 id="title_panier">Total Panier</h4>
+            <h4 class="soustotal_title">Sous-total</h4>
+            <p class="soustotal">8.00€</p>
+            <h4 id="total_title">Total</h4>
+            <p id="total">8.00€</p>
 
+            <div id="valider_button">
 
-            <div>
-              <input type="submit" id="register_user" class="blue-button" value="Valider l'inscription">
-
-              <!--
-                          <router-link to="/"> INPUT QUI VALIDE LE FORM ET ENVOIE SUR LA PROCHAINE PAGE </router-link>
-              -->
+              <button class="blue-button" id="btn_valider_abonnement">
+                <router-link to="/sinscrire3"> Valider </router-link>
+              </button>
 
             </div>
-          </section>
-        </form>
+
+          </div>
+
 
 
         <div id="array_abonnement">
@@ -51,25 +54,18 @@
 
         </div>
 
-        <div id="valider_abonnement">
+          <section id="submit_button">
+            <button class="blue-button">Déjà client ? Connectez-vous</button>
 
-          <h4 id="title_panier">Total Panier</h4>
-          <h4 class="soustotal_title">Sous-total</h4>
-          <p class="soustotal">8.00€</p>
-          <h4 id="total_title">Total</h4>
-          <p id="total">8.00€</p>
+            <div>
 
-          <div id="valider_button">
-            <input type="submit" id="register_user" class="blue-button" value="Valider l'inscription">
+              <button class="blue-button">
+                <router-link to="/sinscrire3"> Valider </router-link>
+              </button>
 
-            <!--
-                        <router-link to="/"> INPUT QUI VALIDE LE FORM ET ENVOIE SUR LA PROCHAINE PAGE </router-link>
-            -->
-
-          </div>
-
-        </div>
-
+            </div>
+          </section>
+        </form>
 
       </div>
     </main>
@@ -96,6 +92,10 @@ export default {
 
 
 <style scoped lang="less">
+
+#btn_valider_abonnement {
+  margin: 0;
+}
 
 #inscrition_step2 {
   font-family: Urbanist, sans-serif;
@@ -192,25 +192,15 @@ export default {
   }
 }
 
-/*
-& #produit_title { grid-area: 1 / 1 / 2 / 2; }
-& #produit { grid-area: 1 / 3 / 2 / 4; }
-
-& #prix_title { grid-area: 1 / 2 / 2 / 3; }
-& #prix { grid-area: 2 / 2 / 3 / 3; }
-
-& #quantite_title  { grid-area: 2 / 1 / 3 / 2; }
-& #quantite { grid-area: 2 / 3 / 3 / 4; }
-
-& #soustotal_title { grid-area: 1 / 4 / 2 / 5; }
-& #soustotal { grid-area: 2 / 4 / 3 / 5; }
-*/
-
 #valider_abonnement {
   border: 1px var(--gray) solid;
 
   width: 33.33%;
   margin: 30px 0;
+
+  @media (max-width: 950px) {
+    width: 100%;
+  }
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -363,6 +353,10 @@ p#champsobligatoire {
   }
 }
 
+.blue-button {
+  margin: 0;
+}
+
 #submit_button {
   display: flex;
   flex-wrap: wrap;
@@ -371,6 +365,86 @@ p#champsobligatoire {
 
   & * {
     margin: 10px;
+  }
+}
+
+& > * {
+  margin: 0 10px;
+}
+
+@media (max-width: 820px) {
+
+  #array_abonnement {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+
+    & {
+      #prix_title {
+        grid-area: 1 / 1 / 2 / 2;
+        grid-row-start: 1;
+        grid-column-start: 1;
+        grid-row-end: 2;
+        grid-column-end: 2;
+      }
+
+      #produit {
+        grid-area: 1 / 2 / 2 / 3;
+        grid-row-start: 1;
+        grid-column-start: 2;
+        grid-row-end: 2;
+        grid-column-end: 3;
+      }
+
+      #prix_title {
+        grid-area: 2 / 1 / 3 / 2;
+        grid-row-start: 2;
+        grid-column-start: 1;
+        grid-row-end: 3;
+        grid-column-end: 2;
+      }
+
+      #prix {
+        grid-area: 2 / 2 / 3 / 3;
+        grid-row-start: 2;
+        grid-column-start: 2;
+        grid-row-end: 3;
+        grid-column-end: 3;
+      }
+
+      #quantite_title {
+        grid-area: 3 / 1 / 4 / 2;
+        grid-row-start: 3;
+        grid-column-start: 1;
+        grid-row-end: 4;
+        grid-column-end: 2;
+      }
+
+      #quantite {
+        grid-area: 3 / 2 / 4 / 3;
+        grid-row-start: 3;
+        grid-column-start: 2;
+        grid-row-end: 4;
+        grid-column-end: 3;
+      }
+
+      .soustotal_title {
+        grid-area: 4 / 1 / 5 / 2;
+        grid-row-start: 4;
+        grid-column-start: 1;
+        grid-row-end: 5;
+        grid-column-end: 2;
+      }
+
+      .soustotal {
+        grid-area: 4 / 2 / 5 / 3;
+        grid-row-start: 4;
+        grid-column-start: 2;
+        grid-row-end: 5;
+        grid-column-end: 3;
+      }
+    }
   }
 }
 

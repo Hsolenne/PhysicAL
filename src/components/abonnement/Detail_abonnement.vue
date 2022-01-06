@@ -92,7 +92,6 @@ export default {
   flex-direction: column;
   align-items: center;
 
-
   & section {
     width: 90%;
     background: white;
@@ -102,10 +101,7 @@ export default {
     display: flex;
     justify-content: space-between;
 
-
     &#question {
-
-
       & div {
         width: 90%;
         margin: auto;
@@ -115,10 +111,9 @@ export default {
       }
     }
 
-
     &#abonnement {
-
       margin-bottom: 0;
+      flex-wrap: wrap;
 
       & div#texte {
         margin: 0 auto;
@@ -132,7 +127,6 @@ export default {
 
   font-family: 'Urbanist', sans-serif;
   font-size: 20px;
-
 
   & h2 {
     font-size: 24px;
@@ -156,15 +150,17 @@ export default {
     width: 250px;
   }
 
-
   & .blue {
     color: var(--blue);
     font-style: italic;
-
   }
 
   & .grey {
     color: var(--gray);
+  }
+
+  #texte {
+    padding: 0 30px;
   }
 
 #prix_abo {
@@ -180,10 +176,17 @@ export default {
     padding: 20px;
     font-family: 'Urbanist', sans-serif;
 
+      @media (max-width: 920px) {
+        align-items: center;
+        margin-bottom: 30px;
+      }
 
+      @media (max-width: 410px) {
+        max-width: 100%;
+        width: 80%;
+      }
 
     & h3 {
-
       font-size: 24px;
       font-weight: normal;
       font-family: 'Urbanist', sans-serif;
@@ -191,7 +194,6 @@ export default {
     }
 
     & p {
-
       display: block;
       text-align: center;
       max-width: 80%;
@@ -203,7 +205,6 @@ export default {
         font-size: 30px;
         font-weight: bold;
         font-family: 'Josefin Sans', sans-serif;
-
       }
 
       &.description_abonnement {
@@ -211,20 +212,16 @@ export default {
         font-size: 18px;
       }
 
-
       &.abonnement_commentaire {
         font-weight: lighter;
         font-size: 14px;
         font-style: italic;
       }
-
-
     }
 
     .blue-button {
       margin: 0 auto;
     }
-
   }
 }
 }

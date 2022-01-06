@@ -101,7 +101,7 @@ header {
   margin-bottom: 80px;
 
   & > * {
-    margin-bottom: 50px;
+    margin: 40px 0;
   }
 
   & > h1 {

@@ -1,11 +1,9 @@
 <template>
   <div>
-    <div id="login_window_background"  v-show="visible">
+    <div id="login_window_background" v-show="visible">
       <div  id="login_window">
 
-        <button id="close_login" class="close" type="button" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button id="close_login" @click="visible = false">X</button>
 
         <h3>Connexion</h3>
         <p>Connectez-vous pour accéder au contenu premium ou choisissez
@@ -105,19 +103,15 @@ export default {
   color: var(--gray);
   background: white;
 
-
-
   width: 800px;
   height: 570px;
   padding: 20px;
-
 
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 20px;
   box-shadow: 0 0 10px #00000060;
-
 
   & h3 {
     font-family: 'Josefin Sans', sans-serif;
@@ -149,8 +143,6 @@ export default {
     width: 100%;
     text-align: center;
 
-
-
     & input#id_login, input#pswd_login {
       max-width: 536px;
 
@@ -162,13 +154,7 @@ export default {
 
       border-radius: 0;
       color: var(--gray);
-
     }
-
-
-
-
-
   }
 
   button#close_login {
@@ -186,10 +172,6 @@ export default {
 
     }
   }
-
 }
-
-
-
 
 </style>

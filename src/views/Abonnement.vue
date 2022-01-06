@@ -16,13 +16,7 @@
 
     <PresentationAbonnements/>
 
-
-
-
-
     </main>
-
-
 
     <footer>
       <FooterPage/>
@@ -69,7 +63,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 80px;
+  margin: 40px 0;
 
   & > * {
     margin-bottom: 50px;
@@ -93,13 +87,9 @@ header {
   }
 }
 
-
 main {
-
-
   display: flex;
   flex-direction: column;
-
 
   & h2 {
     font-size: 40px;
@@ -109,9 +99,7 @@ main {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: normal;
     text-align: center;
-
-
   }
-
 }
+
 </style>

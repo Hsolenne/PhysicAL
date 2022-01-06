@@ -62,16 +62,8 @@ export default {
 }
 </script>
 
+
 <style lang="less" scoped>
-
-/*
-
-body {
-  background-image: url("../assets/content/fils_fond_div.png");
-
-}
-*/
-
 
 #img-background {
   height: 100vh;
@@ -135,7 +127,7 @@ header {
   }
 
   & > a.accueil-button:hover {
-    background: none;
+    background: white;
     color: var(--blue);
   }
 }
@@ -166,6 +158,5 @@ main {
     }
   }
 }
-
 
 </style>

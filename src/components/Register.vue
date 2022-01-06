@@ -77,7 +77,7 @@ export default {
     margin: 25px 0;
   }
 
-  & a, p {
+  & p {
     display: inline-block;
   }
 

@@ -37,8 +37,6 @@
           </div>
 
           <div id="form_part_2">
-
-
             <div>
               <input type="password" placeholder="Mot de passe" name="password_user" id="password_user" required>
             </div>
@@ -54,12 +52,12 @@
           <section id="submit_button">
           <button class="blue-button">Déjà client ? Connectez-vous</button>
 
-
           <div>
-<!--            <input type="submit" id="register_user" class="blue-button" value="Valider l'inscription">-->
-                        <router-link to="/sinscrire2"> INSCIPTION  </router-link>
-
+            <button class="blue-button">
+              <router-link to="/sinscrire2"> Inscription  </router-link>
+            </button>
           </div>
+
           </section>
         </form>
 

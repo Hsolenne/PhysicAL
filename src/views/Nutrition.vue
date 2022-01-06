@@ -69,7 +69,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 80px;
+  margin: 40px 0;
 
   & > * {
     margin-bottom: 50px;

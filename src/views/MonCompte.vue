@@ -1,12 +1,11 @@
 <template>
-  <div id="inscrition">
+  <div id="moncompte">
 
     <main>
 
 
       <div id="white_bg">
         <h2><span className="title_underline">Mon compte</span></h2>
-
 
         <form action="" method="get">
           <div id="form_part_1">
@@ -38,7 +37,6 @@
               <p>postal_code_user</p>
             </div>
           </div>
-
 
           <section id="submit_button">
 
@@ -101,8 +99,9 @@ export default {
 
 <style scoped lang="less">
 
-#inscrition {
+#moncompte {
   font-size: 20px;
+  font-family: 'Urbanist', sans-serif;
 }
 
 main {
@@ -275,6 +274,82 @@ p#champsobligatoire {
 
     width: 100%;
     height: 100%;
+  }
+}
+
+@media (max-width: 820px) {
+
+  #array_abonnement {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+
+    & {
+      #prix_title {
+        grid-area: 1 / 1 / 2 / 2;
+        grid-row-start: 1;
+        grid-column-start: 1;
+        grid-row-end: 2;
+        grid-column-end: 2;
+      }
+
+      #produit {
+        grid-area: 1 / 2 / 2 / 3;
+        grid-row-start:1 ;
+        grid-column-start: 2;
+        grid-row-end:2 ;
+        grid-column-end:3;
+      }
+
+      #prix_title {
+        grid-area: 2 / 1 / 3 / 2;
+        grid-row-start: 2;
+        grid-column-start: 1;
+        grid-row-end: 3;
+        grid-column-end: 2;
+      }
+
+      #prix {
+        grid-area: 2 / 2 / 3 / 3;
+        grid-row-start:2 ;
+        grid-column-start:2 ;
+        grid-row-end: 3;
+        grid-column-end: 3;
+      }
+
+      #quantite_title {
+        grid-area: 3 / 1 / 4 / 2;
+        grid-row-start:3 ;
+        grid-column-start:1 ;
+        grid-row-end: 4;
+        grid-column-end: 2;
+      }
+
+      #quantite {
+        grid-area: 3 / 2 / 4 / 3;
+        grid-row-start: 3;
+        grid-column-start: 2;
+        grid-row-end: 4;
+        grid-column-end: 3;
+      }
+
+      .soustotal_title {
+        grid-area: 4 / 1 / 5 / 2;
+        grid-row-start: 4;
+        grid-column-start: 1;
+        grid-row-end: 5;
+        grid-column-end: 2;
+      }
+
+      .soustotal {
+        grid-area: 4 / 2 / 5 / 3;
+        grid-row-start: 4;
+        grid-column-start: 2;
+        grid-row-end: 5;
+        grid-column-end: 3;
+      }
+    }
   }
 }
 

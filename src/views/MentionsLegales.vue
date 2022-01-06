@@ -100,7 +100,6 @@ export default {
 
 <style scoped lang="less">
 
-
 #img-background {
   height: 40vh;
   width: 100vw;
@@ -125,7 +124,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 80px;
+  margin: 40px 0;
 
   & > * {
     margin-bottom: 50px;
@@ -145,18 +144,14 @@ header {
     font-size: 30px;
     max-width: 423px;
     width: 100%;
-
   }
 }
 
-
 main {
-
   font-family: 'Urbanist', sans-serif;
 
   display: flex;
   flex-direction: column;
-
 
   & h2 {
     font-size: 40px;
@@ -167,15 +162,10 @@ main {
     font-weight: normal;
     text-align: center;
 
-
   }
-
 }
 
-
 main {
-
-
   margin-top: 50px;
   width: 100%;
   background: var(--light_gray);
@@ -183,7 +173,6 @@ main {
   display: flex;
   align-items: center;
 
-
   & h2 {
     font-size: 40px;
     margin: 20px auto;
@@ -192,12 +181,8 @@ main {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: normal;
     text-align: center;
-
   }
-
-
 }
-
 
 .white_bg {
   margin: 25px;
@@ -208,22 +193,17 @@ main {
 
   background: white;
 
-
   font-size: 20px;
-
 
   & h3 {
     font-size: 22px;
     margin: 20px;
     padding-top: 20px;
-
   }
 
   & p {
     margin-bottom: 10px;
   }
-
-
 }
 
 

@@ -56,6 +56,10 @@ p {
   font-size: 22px;
   width: 60%;
 
+  @media (max-width: 420px) {
+    width: 80%
+  }
+
   & span {
     font-weight: bold;
   }
@@ -65,7 +69,7 @@ img {
   width: 350px;
   height: 364.5px;
 
-  @media (max-width: 360px) {
+  @media (max-width: 420px) {
     width: 280px;
     height: 291.5px;
   }

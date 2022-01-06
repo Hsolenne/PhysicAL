@@ -90,11 +90,12 @@ export default {
 
   @media (max-width: 1320px) {
     height: 100vh;
+
     & ul {
-      background-image: url("./assets/content/fils-menu.png");
+      background-image: url("./assets/content/fond-fils-tablet-menu.png");
       background-position: right bottom;
       background-repeat: no-repeat;
-      background-size: 50%;
+      background-size: 100%;
     }
 
     &.closed {
@@ -109,6 +110,16 @@ export default {
       }
     }
   }
+
+  @media (max-width: 680px) {
+    & ul {
+      background-image: url("./assets/content/fond-fils-mobile-menu.png");
+      background-position: right bottom;
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  }
+
 
   background: white;
   box-shadow: 0 0 10px #00000060;

@@ -3,31 +3,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
 
 :root {
-
-
     --gray: #707070;
     --light_gray: #EEEEEE;
 
     --blue: #7934CB;
     --purple: #C89AFF;
-
-
 }
 
 html {
     width: 100vw;
     max-width:100vw ;
+    background-image: url("../content/fond-fils.png");
+    background-size: cover;
 }
-
-
 
 body {
     max-width: 1320px;
     width: 100%;
     margin: 0 auto;
-
 }
-
 
 .blue-button {
     padding: 0 20px;
@@ -38,7 +32,6 @@ body {
     font-size: 16px;
     color: white;
     width: min-content;
-
 }
 
 .blue-button a {
@@ -58,12 +51,33 @@ body {
     color: var(--blue);
 }
 
-
 .title_underline {
     display: inline-block;
     text-decoration: underline var(--purple) 10px;
 }
 
 .title_underline::before {
-
 }
+
+@media (max-width: 440px) {
+    header h1 {
+        font-size: 50px !important;
+    }
+
+    header h2 {
+        font-size: 22px !important;
+    }
+
+    main > h2 {
+        font-size: 28px !important;
+    }
+
+    main p {
+        font-size: 18px !important;
+    }
+
+    footer h3 {
+        font-size: 24px !important;
+    }
+}
+
