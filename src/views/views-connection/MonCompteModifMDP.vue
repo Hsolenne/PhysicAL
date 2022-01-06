@@ -2,39 +2,20 @@
   <div id="inscrition">
 
     <main>
+
+
       <div id="white_bg">
-        <h2><span class="title_underline">Inscription</span></h2>
+        <h2><span className="title_underline">Modification des données personnelles</span></h2>
+
 
         <form action="" method="get">
           <div id="form_part_1">
             <div>
-              <input type="text" placeholder="Prénom" name="name_user" id="name_user" required>
-            </div>
-
-            <div>
-              <input type="text" placeholder="Nom" name="surname_user" id="surname_user" required>
-            </div>
-
-            <div>
-              <input type="email" placeholder="E-Mail" name="email_user" id="email_user" required>
-            </div>
-
-            <div>
-              <input type="date" placeholder="Date de naissance" name="birthday_user" id="birthday_user" required>
-            </div>
-
-            <div>
-              <input type="tel" placeholder="Numéro de téléphone" name="number_user" id="number_user" required>
-            </div>
-
-            <div>
-              <input type="text" placeholder="Ville" name="city_user" id="city_user" required>
-            </div>
-
-            <div>
-              <input type="number" placeholder="Code postal" name="city_user" id="postal_code_user" required>
+              <input type="password" placeholder="Saisissez votre ancien mot de passe" name="old_password_user" id="old_password_user" required>
             </div>
           </div>
+
+
 
           <div id="form_part_2">
 
@@ -49,17 +30,23 @@
             </div>
           </div>
 
-          <p id="champsobligatoire">Champs obligatoires.</p>
-
           <section id="submit_button">
-          <button class="blue-button">Déjà client ? Connectez-vous</button>
+
+            <button class="blue-button">
+              <router-link to="/moncompte"> Mot de passe perdu ?</router-link>
+            </button>
 
 
-          <div>
-<!--            <input type="submit" id="register_user" class="blue-button" value="Valider l'inscription">-->
-                        <router-link to="/sinscrire2"> INSCIPTION  </router-link>
+            <button class="blue-button">
+              <router-link to="/moncompte"> Annuler</router-link>
+            </button>
 
-          </div>
+            <button class="blue-button">
+              <router-link to="/moncompte"> Confirmer</router-link>
+            </button>
+
+
+
           </section>
         </form>
 
@@ -76,12 +63,13 @@
 </template>
 
 <script>
-import FooterPage from "../components/FooterPage";
+import FooterPage from "../../components/FooterPage";
 
 
 export default {
-  name: "SInscrire",
+  name: "MonCompteModificationMDP",
   components: {FooterPage},
+
 
 }
 </script>
@@ -131,7 +119,7 @@ main {
 form {
   & div > div {
     min-width: calc(50% - 55px);
-    height: 42px ;
+    height: 42px;
     margin-right: 55px;
     margin-bottom: 20px;
     position: relative;
@@ -139,17 +127,6 @@ form {
     @media (max-width: 860px) {
       width: 100%;
       min-width: 100%;
-    }
-
-    &:after {
-      content: "*";
-      font-family: Urbanist, sans-serif;
-      color: var(--blue);
-      font-size: 40px;
-      font-weight: bold;
-      position: absolute;
-      top: calc( 50% - (40px * 0.35));
-      right: -20px;
     }
 
     & > input {
@@ -180,14 +157,16 @@ p#champsobligatoire {
     font-size: 40px;
     font-weight: bold;
     position: absolute;
-    top: calc( 50% - (20px * 0.8) );
+    top: calc(50% - (20px * 0.8));
     left: -20px;
   }
 }
 
 #submit_button {
   display: flex;
+
   flex-wrap: wrap;
+
   justify-content: center;
   padding: 20px 0;
 

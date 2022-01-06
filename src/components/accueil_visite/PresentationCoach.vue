@@ -26,7 +26,19 @@ export default {
   name: 'PresentationCoach'
 }
 </script>
+
+
 <style lang="less" scoped>
+
+@media (max-width: 1400px) {
+
+  section#presentation_coach {
+    flex-direction: column;
+    & p {
+      margin: 50px;
+    }
+  }
+}
 
 #presentation_coach {
   display: flex;
@@ -34,9 +46,7 @@ export default {
   align-items: center;
 
   margin-bottom: 120px;
-
 }
-
 
 p {
   font-family: 'Urbanist', sans-serif;
@@ -54,6 +64,11 @@ p {
 img {
   width: 350px;
   height: 364.5px;
+
+  @media (max-width: 360px) {
+    width: 280px;
+    height: 291.5px;
+  }
 }
 
 </style>

@@ -81,6 +81,32 @@ export default {
 </script>
 <style lang="less" scoped>
 
+@media (max-width: 1120px) {
+  footer {
+    width: 100%;
+
+    & div#footer_top {
+      display: flex;
+      flex-direction: column;
+      width: 70%;
+
+      & p , div#svg_list_top {
+        margin-top: 30px;
+      }
+    }
+    & div#footer_bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      & > div {
+        width: 230px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
 footer {
   max-width: 1320px;
 

@@ -51,8 +51,14 @@ export default {
   display: flex;
   margin: auto;
   justify-content: center;
+
+  flex-wrap: wrap;
+
+  & > div {
+    @media (max-width: 600px ) {
+      margin-bottom: 20px;
+    }
+  }
 }
-
-
 
 </style>

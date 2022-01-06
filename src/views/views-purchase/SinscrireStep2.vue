@@ -91,15 +91,17 @@ export default {
   components: {FooterPage},
 
 }
+
 </script>
 
+
 <style scoped lang="less">
+
 #inscrition_step2 {
-  font-family: Urbanist;
+  font-family: Urbanist, sans-serif;
   font-weight: lighter;
   font-size: 20px;
 }
-
 
 #array_abonnement {
 
@@ -182,20 +184,15 @@ export default {
     grid-column-end: 5;
   }
 
-
   & > * {
     text-align: center;
 
     width: 100%;
     height: 100%;
-
-
   }
-
 }
 
 /*
-
 & #produit_title { grid-area: 1 / 1 / 2 / 2; }
 & #produit { grid-area: 1 / 3 / 2 / 4; }
 
@@ -207,14 +204,10 @@ export default {
 
 & #soustotal_title { grid-area: 1 / 4 / 2 / 5; }
 & #soustotal { grid-area: 2 / 4 / 3 / 5; }
-
-
 */
-
 
 #valider_abonnement {
   border: 1px var(--gray) solid;
-
 
   width: 33.33%;
   margin: 30px 0;
@@ -222,8 +215,8 @@ export default {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
 
   & > * {
     text-align: center;
@@ -232,7 +225,6 @@ export default {
     height: 100%;
 
     margin: 10px;
-
   }
 }
 
@@ -242,7 +234,6 @@ export default {
   grid-column-start: 1;
   grid-row-end: 2;
   grid-column-end: 3;
-
 }
 
 .soustotal_title {
@@ -285,10 +276,7 @@ export default {
   grid-column-end: 3;
 }
 
-
 main {
-
-
   margin-top: 50px;
   width: 100%;
   background: var(--light_gray);
@@ -296,7 +284,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 
   & h2 {
     font-size: 40px;
@@ -306,17 +293,13 @@ main {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: normal;
     text-align: center;
-
   }
 
   & button {
     width: 200px;
     margin: 50px 10px;
   }
-
-
 }
-
 
 #white_bg {
   margin: 25px;
@@ -329,7 +312,6 @@ main {
 }
 
 form {
-
   & div > div {
     min-width: calc(50% - 55px);
     height: 42px;
@@ -339,21 +321,19 @@ form {
 
     &:after {
       content: "*";
-      font-family: Urbanist;
+      font-family: Urbanist,sans-serif;
       color: var(--blue);
       font-size: 40px;
       font-weight: bold;
       position: absolute;
       top: calc(50% - (40px * 0.35));
       right: -20px;
-
     }
 
     & > input {
       width: 100%;
       height: 100%;
     }
-
   }
 
   #form_part_1, #form_part_2 {
@@ -362,40 +342,36 @@ form {
   }
 }
 
-
 p#champsobligatoire {
   position: relative;
   display: block;
   width: max-content;
   margin-left: 20px;
-  font-family: Urbanist;
+  font-family: Urbanist, sans-serif;
   font-weight: lighter;
   font-size: 20px;
 
   &:before {
     content: "*";
-    font-family: Urbanist;
+    font-family: Urbanist, sans-serif;
     color: var(--blue);
     font-size: 40px;
     font-weight: bold;
     position: absolute;
     top: calc(50% - (20px * 0.8));
     left: -20px;
-
   }
 }
 
 #submit_button {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   padding: 20px 0;
 
   & * {
-    margin: 0 10px;
-
+    margin: 10px;
   }
-
-
 }
 
 </style>

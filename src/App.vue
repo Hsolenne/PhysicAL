@@ -2,39 +2,37 @@
   <div id="app">
       <div>
         <nav>
-          <div id="menu-contener">
+          <div id="menu-contener" class="closed">
 
 
             <ul>
 
-              <router-link id="logo" to="/">LOGO</router-link>
+              <div id="logo_and_button">
+                <router-link id="logo" to="/"  onclick="this.parentNode.parentNode.parentNode.classList.add('closed')">LOGO</router-link>
+                <div id="menu-button" onclick="this.parentNode.parentNode.parentNode.classList.toggle('closed')">
+                  <div class="menu_button_bar"></div>
+                  <div class="menu_button_bar"></div>
+                  <div class="menu_button_bar"></div>
+                </div>
+              </div>
 
+              <router-link to="/" onclick="this.parentNode.parentNode.classList.add('closed')">Accueil</router-link>
 
-              <router-link to="/">Accueil</router-link>
+              <router-link to="/abonnement" v-show="true" onclick="this.parentNode.parentNode.classList.add('closed')">Abonnement</router-link>
+              <router-link to="/mescours" v-show="true" onclick="this.parentNode.parentNode.classList.add('closed')">Mes Cours</router-link>
 
-              <router-link to="/abonnement" v-show="true">Abonnement</router-link>
-              <router-link to="/mescours" v-show="true">Mes Cours</router-link>
+              <router-link to="/nutrition" onclick="this.parentNode.parentNode.classList.add('closed')">Nutrition</router-link>
 
-              <router-link to="/nutrition">Nutrition</router-link>
+              <router-link to="/moncompte" v-show="true" onclick="this.parentNode.parentNode.classList.add('closed')">Mon compte</router-link>
+              <router-link to="/contact" v-show="true" onclick="this.parentNode.parentNode.classList.add('closed')">Contact</router-link>
 
-              <router-link to="/moncompte" v-show="true">Mon compte</router-link>
-              <router-link to="/contact" v-show="true">Contact</router-link>
-
-              <router-link to="/sinscrire" v-show="true">S'inscrire</router-link>
+              <router-link to="/sinscrire" v-show="true" onclick="this.parentNode.parentNode.classList.add('closed')">S'inscrire</router-link>
 
 
               <a @click="$refs.login.visible=true">{{titre}}</a>
 
 
             </ul>
-
-            <div id="menu-button">
-              <div class="menu_button_bar"></div>
-              <div class="menu_button_bar"></div>
-              <div class="menu_button_bar"></div>
-            </div>
-
-
           </div>
         </nav>
 
@@ -79,7 +77,6 @@ export default {
 }
 
 #menu-contener {
-
   z-index: 10;
 
   font-family: 'Urbanist', sans-serif;
@@ -91,9 +88,26 @@ export default {
   width: 100vw;
   height: 50px;
 
-
   @media (max-width: 1320px) {
     height: 100vh;
+    & ul {
+      background-image: url("./assets/content/fils-menu.png");
+      background-position: right bottom;
+      background-repeat: no-repeat;
+      background-size: 50%;
+    }
+
+    &.closed {
+      height: 50px;
+
+      & ul {
+        background: white;
+
+        & > a {
+          display: none;
+        }
+      }
+    }
   }
 
   background: white;
@@ -135,11 +149,8 @@ export default {
 
     @media (max-width: 1320px) {
       display: block;
-
     }
-
   }
-
 
   & a {
     display: block;
@@ -149,16 +160,13 @@ export default {
 
     border-right: 1px solid var(--gray);
 
-
     @media (max-width: 1320px) {
       border: none;
       margin-bottom: 30px;
-
     }
 
     text-decoration: none;
     color: var(--gray);
-
 
     &:first-child {
       background-image: url("./assets/content/LOGO_2.svg");
@@ -166,7 +174,7 @@ export default {
       background-repeat: no-repeat;
       background-size: contain;
       height: 35px;
-      width: 102.15px ;
+      width: 102.15px;
 
       text-indent: -9999px;
 
@@ -174,29 +182,17 @@ export default {
         background-image: url("./assets/content/LOGO_1.svg");
         height: 35px;
         width: 35px;
-        margin: 15px 0 100px 0;
-
-
+        margin: 7.5px 0 100px 0;
       }
-
-
     }
-
 
     &:nth-last-child(-n + 3), &:first-child {
       border: none;
-
     }
-
 
     &:nth-last-child(2) {
       border: none;
       color: var(--blue);
-
-      @media (max-width: 1320px){
-        margin-top: 150px;
-      }
-
     }
 
     &:last-child {
@@ -207,41 +203,39 @@ export default {
       padding: 5px 15px;
       border-radius: 15px;
       border: 1px solid var(--blue);
+      max-width: 100px;
 
       color: white;
-
-
     }
 
     &:last-child:hover {
       background: none;
       color: var(--blue);
-
     }
-
 
     &:hover {
       text-decoration: underline;
     }
 
-
-
-
     @media (max-width: 1320px) {
       &:nth-child(1+n) {
         display: none;
-
       }
     }
-
-
   }
-
 
   & #logo {
     margin-right: auto;
+  }
+}
 
+  #logo_and_button {
+    display: flex;
+
+    & #menu-button {
+      padding: 0 45px;
+      margin: 7.5px 0 100px 0;
+    }
   }
 
-}
 </style>

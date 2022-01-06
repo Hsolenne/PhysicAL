@@ -117,7 +117,6 @@ header {
     font-size: 30px;
     max-width: 423px;
     width: 100%;
-
   }
 
   & > a.accueil-button {
@@ -133,26 +132,17 @@ header {
     width: min-content;
     color: white;
     border: 1px solid var(--blue);
-
   }
 
   & > a.accueil-button:hover {
     background: none;
     color: var(--blue);
-
-
   }
-
 }
 
-
 main {
-
-
-
   display: flex;
   flex-direction: column;
-
 
   & h2 {
     font-size: 40px;
@@ -162,16 +152,19 @@ main {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: normal;
     text-align: center;
-
-
   }
-
 
   & #activité_liste {
     display: flex;
     justify-content: center;
-  }
+    flex-wrap: wrap;
 
+    & > div {
+      @media (max-width: 470px) {
+        width: 95%;
+      }
+    }
+  }
 }
 
 

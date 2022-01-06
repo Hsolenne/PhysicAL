@@ -22,6 +22,8 @@ const routes = [
   {path: '/sinscrire2', name: 'SInscrireStep2', component: () => import('../views/views-purchase/SinscrireStep2.vue'),},
   {path: '/sinscrire3', name: 'SInscrireStep3', component: () => import('../views/views-purchase/SinscrireStep3.vue'),},
 
+  {path: '/moncomptemodif', name: 'MonCompteModificationDonnees', component: () => import('../views/views-connection/MonCompteModifDonnees.vue'),},
+  {path: '/moncomptemdp', name: 'MonCompteModificationMDP', component: () => import('../views/views-connection/MonCompteModifMDP.vue'),},
 
 ];
 

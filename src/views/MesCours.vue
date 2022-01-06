@@ -10,7 +10,6 @@
     </header>
 
     <main>
-      <!--      <h2>Laissez moi un <span class="title_underline">message !</span></h2>-->
 
       <div id="liste_mes_activites">
         <MesActivites
@@ -59,8 +58,21 @@ export default {
 #liste_mes_activites {
   display: flex;
   justify-content: space-evenly;
-}
+  flex-wrap: wrap;
 
+  & > div {
+    @media (max-width: 847px) {
+      margin: 0 auto 20px auto;
+    }
+
+    @media (max-width: 480px) {
+      width: 90%;
+
+      width: -webkit-fill-available;
+      margin: 0 20px 20px;
+    }
+  }
+}
 
 #img-background {
   height: 40vh;
@@ -106,17 +118,12 @@ header {
     font-size: 30px;
     max-width: 423px;
     width: 100%;
-
   }
 }
 
-
 main {
-
-
   display: flex;
   flex-direction: column;
-
 
   & h2 {
     font-size: 40px;
@@ -126,11 +133,7 @@ main {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: normal;
     text-align: center;
-
-
   }
-
 }
-
 
 </style>

@@ -63,24 +63,27 @@ export default {
 
 
 </script>
+
+
 <style lang="less" scoped>
 
-
 #section_activite {
-
   margin: 0 20px 50px 20px;
   padding-bottom: 30px;
-
 
   font-family: 'Urbanist', sans-serif;
   font-weight: lighter;
   font-size: 20px;
   color: var(--gray);
 
-
   background: white;
   box-shadow: 0 0 5px #00000060;
   width: 424px;
+
+  @media (max-width: 470px) {
+    width: 95%;
+    margin: 10px auto;
+  }
 
   float: left;
   display: flex;
@@ -90,9 +93,7 @@ export default {
   & > * {
     margin: 0 auto;
     text-align: center;
-
   }
-
 }
 
 img {
@@ -105,7 +106,6 @@ p {
   width: 60%;
   text-align: center;
   padding-bottom: 60px;
-
 }
 
 h4 {
@@ -119,13 +119,11 @@ h5 {
   font-weight: lighter;
   font-size: 20px;
   text-decoration: underline;
-
 }
 
 button {
   width: 100px;
 }
-
 
 div.list_point {
   display: flex;

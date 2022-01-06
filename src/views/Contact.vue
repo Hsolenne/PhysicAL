@@ -13,7 +13,7 @@
       <h2>Laissez moi un <span class="title_underline">message !</span></h2>
 
       <div id="white_bg">
-        <h2><span class="title_underline">Inscription</span></h2>
+        <h2><span class="title_underline">Message</span></h2>
 
 
         <form action="" method="get">
@@ -74,7 +74,6 @@ export default {
 
 <style scoped lang="less">
 
-
 #img-background {
   height: 40vh;
   width: 100vw;
@@ -123,13 +122,9 @@ header {
   }
 }
 
-
 main {
-
-
   display: flex;
   flex-direction: column;
-
 
   & h2 {
     font-size: 40px;
@@ -139,16 +134,10 @@ main {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: normal;
     text-align: center;
-
-
   }
-
 }
 
-
 main {
-
-
   margin-top: 50px;
   width: 100%;
   background: var(--light_gray);
@@ -156,7 +145,6 @@ main {
   display: flex;
   align-items: center;
 
-
   & h2 {
     font-size: 40px;
     margin: 60px auto;
@@ -165,17 +153,13 @@ main {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: normal;
     text-align: center;
-
   }
 
   & button {
     width: 200px;
     margin: 50px 10px;
   }
-
-
 }
-
 
 #white_bg {
   margin: 25px;
@@ -192,6 +176,11 @@ form {
   width: 100%;
 
   & div > div {
+    @media (max-width: 860px) {
+      width: 100%;
+      min-width: 100%;
+    }
+
     min-width: calc(50% - 55px);
     height: 42px ;
     margin-right: 55px;

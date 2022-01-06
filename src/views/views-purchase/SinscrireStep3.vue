@@ -80,10 +80,7 @@
           <h4 id="total_title">Total</h4>
           <p id="total">8.00€</p>
 
-
         </div>
-
-
       </div>
     </main>
 
@@ -106,16 +103,16 @@ export default {
 }
 </script>
 
+
 <style scoped lang="less">
+
 #inscrition_step2 {
-  font-family: Urbanist;
+  font-family: Urbanist, sans-serif;
   font-weight: lighter;
   font-size: 20px;
 }
 
 main {
-
-
   margin-top: 50px;
   width: 100%;
   background: var(--light_gray);
@@ -123,7 +120,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 
   & h2 {
     font-size: 40px;
@@ -133,17 +129,13 @@ main {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: normal;
     text-align: center;
-
   }
 
   & button {
     width: 200px;
     margin: 50px 10px;
   }
-
-
 }
-
 
 #white_bg {
   margin: 25px;
@@ -156,7 +148,6 @@ main {
 }
 
 form {
-
   & div > div {
     min-width: calc(50% - 55px);
     height: 42px;
@@ -164,23 +155,26 @@ form {
     margin-bottom: 20px;
     position: relative;
 
+    @media (max-width: 860px) {
+      width: 100%;
+      min-width: 100%;
+    }
+
     &:after {
       content: "*";
-      font-family: Urbanist;
+      font-family: Urbanist, sans-serif;
       color: var(--blue);
       font-size: 40px;
       font-weight: bold;
       position: absolute;
       top: calc(50% - (40px * 0.35));
       right: -20px;
-
     }
 
     & > input {
       width: 100%;
       height: 100%;
     }
-
   }
 
   #form_part_1, #form_part_2 {
@@ -189,40 +183,36 @@ form {
   }
 }
 
-
 p#champsobligatoire {
   position: relative;
   display: block;
   width: max-content;
   margin-left: 20px;
-  font-family: Urbanist;
+  font-family: Urbanist, sans-serif;
   font-weight: lighter;
   font-size: 20px;
 
   &:before {
     content: "*";
-    font-family: Urbanist;
+    font-family: Urbanist, sans-serif;
     color: var(--blue);
     font-size: 40px;
     font-weight: bold;
     position: absolute;
     top: calc(50% - (20px * 0.8));
     left: -20px;
-
   }
 }
 
 #submit_button {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   padding: 20px 0;
 
   & * {
-    margin: 0 10px;
-
+    margin: 10px;
   }
-
-
 }
 
 </style>
